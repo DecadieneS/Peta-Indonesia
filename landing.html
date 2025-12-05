@@ -3,87 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peta Wisata Indonesia</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <title>Selamat Datang · Peta Wisata Indonesia</title>
+  <link rel="stylesheet" href="stylesheet.css" />
 </head>
 <body>
 
   <nav>
     <div class="logo">Peta Wisata Indonesia</div>
     <ul>
-        <li><a href="landing.html">Home</a></li>
-        <li><a href="#home">Peta</a></li>
-        <li><a href="#destinasi">Destinasi</a></li>
-        <li><a href="#tentang">Tentang</a></li>
-        <li><a href="#kontak">Kontak</a></li>
+      <li><a href="landing.html" class="active">Home</a></li>
+      <li><a href="index.html">Peta</a></li>
+      <li><a href="index.html#destinasi">Destinasi</a></li>
+      <li><a href="index.html#tentang">Tentang</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
     </ul>
   </nav>
-  <section id="home">
-    <h1>Peta Wisata Indonesia</h1>
-    <p class="subtext">Jelajahi wisata terbaik Nusantara melalui peta interaktif</p>
-    <button id="alert-btn">Sambutan</button>
 
-    <div id="map-container">
-      <div id="map-inner">
-        <img id="map-img" src="https://cdn.shopify.com/s/files/1/0428/0965/5452/files/PETA-INDONESIA.jpg?v=1664388889" alt="Peta Indonesia"/>
+  <section id="landing" style="padding-top:120px;">
+    <h1>Selamat Datang di Peta Wisata Indonesia</h1>
+    <p class="subtext">
+      Indonesia adalah negara kepulauan terbesar di dunia dengan lebih dari 17.000 pulau, 
+      kekayaan budaya, serta keanekaragaman alam yang menakjubkan. 
+      Peta ini dibuat untuk membantu kamu menjelajahi destinasi terbaik di seluruh Nusantara.
+    </p>
 
-        <div class="marker" id="marker-rajaampat" style="top: 48.6%; left: 76.4%;">📍</div>
-        <div class="marker" id="marker-danautoba" style="top: 33%; left: 15.6%;">📍</div>
-        <div class="marker" id="marker-borobudur" style="top: 68.4%; left: 36.5%;">📍</div>
-        <div class="marker" id="marker-bromo" style="top: 69.5%; left: 42%;">📍</div>
-        <div class="marker" id="marker-purabali" style="top: 71.4%; left: 46%;">📍</div>
-        <div class="marker" id="marker-labuanbajo" style="top: 72.5%; left: 55.5%;">📍</div>
-      </div>
+
+    <div style="max-width:850px; margin-top:22px; text-align:center;">
+      <h2>Mengapa Peta Ini Dibuat?</h2>
+      <p class="subtext">
+        Banyak wisatawan, baik dalam negeri maupun mancanegara, sering kesulitan 
+        menemukan lokasi wisata secara visual. Oleh karena itu, website ini dibuat untuk:
+      </p>
+      <ul style="text-align:left; max-width:700px; margin:0 auto; font-size:1.1rem; line-height:1.6;">
+        <li>Menyajikan peta interaktif yang mudah digunakan</li>
+        <li>Menampilkan informasi lengkap destinasi populer</li>
+        <li>Memvisualisasikan lokasi geografis secara akurat</li>
+        <li>Memberikan pengalaman eksplorasi yang lebih menarik</li>
+        <li>Membantu wisatawan memilih tempat tujuan perjalanan</li>
+      </ul>
     </div>
-  </section>
 
-  <section id="destinasi" class="box">
-    <h2>Destinasi Wisata Unggulan</h2>
-    <p>Temukan informasi lengkap melalui daftar berikut:</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Nama Destinasi</th>
-          <th>Provinsi</th>
-          <th>Deskripsi</th>
-          <th>Penjelasan</th>
-        </tr>
-      </thead>
-      <tbody id="table-body"></tbody>
-    </table>
-  </section>
+    <a href="index.html" id="map-btn" style="display:block; margin-top:40px;">
+      <img 
+        src="https://cdn.shopify.com/s/files/1/0428/0965/5452/files/PETA-INDONESIA.jpg?v=1664388889"
+        alt="Masuk ke Peta"
+        style="
+          width:60%;
+          max-width:520px;
+          border-radius:18px;
+          box-shadow:0 6px 20px rgba(0,0,0,0.25);
+          transition:0.25s;
+        ">
+    </a>
 
-  <section id="tentang" class="box">
-    <h2>Tentang Website Ini</h2>
-    <p>Website ini dibuat sebagai media informasi wisata interaktif. Pengunjung dapat menjelajahi peta, membaca detail destinasi, dan mengirimkan kritik atau saran untuk pengembangan lebih lanjut.</p>
-  </section>
+    <script>
+      const mapBtn = document.querySelector("#map-btn img");
+      mapBtn.addEventListener("mouseover", () => mapBtn.style.transform = "scale(1.05)");
+      mapBtn.addEventListener("mouseout", () => mapBtn.style.transform = "scale(1)");
+    </script>
 
-  <section id="kontak" class="section-box">
-  <h2>Kritik & Saran</h2>
-
-  <form id="contact-form">
-    <label>Nama:</label>
-    <input type="text" id="nama" />
-
-    <label>Email:</label>
-    <input type="email" id="email" />
-
-    <label>Pesan:</label>
-    <textarea id="pesan" rows="4"></textarea>
-
-    <button type="submit">Kirim</button>
-  </form>
-
-  <p id="form-msg"></p>
+    <p class="subtext" style="margin-top:20px; font-weight:600;">
+      Klik gambar untuk mulai menjelajah →
+    </p>
   </section>
 
 
-  <div id="submitted-list" style="display:none;">
-  <h3>Data Masukan Pengguna</h3>
-  <ul id="list-ul"></ul>
-  </div>
-  <button id="btn-isi-lagi" style="display:none;">Isi Lagi</button>
+
 
 <footer>
   <p>&copy; <span id="year"></span> Peta Wisata Indonesia</p>
@@ -98,18 +84,6 @@
   </p>
 </footer>
 
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span id="popup-close">✖</span>
-      <img id="popup-img" src="" alt="Foto Wisata"/>
-      <div>
-        <h2 id="popup-title"></h2>
-        <p id="popup-location"></p>
-        <p id="popup-desc"></p>
-      </div>
-    </div>
-  </div>
 
-  <script src="script.js"></script>
 </body>
 </html>
